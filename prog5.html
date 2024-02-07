@@ -20,7 +20,9 @@
             .controller('myController', function ($scope) {
                 $scope.disableClickMe = false;
                 $scope.showButton = true;
+                $scope.showTotal = false; // Initialize showTotal
                 $scope.total = 0;
+
                 $scope.clickMe = function () {
                     $scope.disableClickMe = true;
                     $scope.showTotal = true;
@@ -33,6 +35,14 @@
                     // Example calculation
                     return 100; // Change this value to calculate a different total
                 }
+
+                $scope.$watch('showButton', function (newValue) {
+                    if (newValue) {
+                        $scope.disableClickMe = false;
+                    } else {
+                        $scope.disableClickMe = true;
+                    }
+                });
             });
     </script>
 </body>
