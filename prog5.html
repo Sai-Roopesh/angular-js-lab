@@ -24,9 +24,15 @@
                 $scope.clickMe = function () {
                     $scope.disableClickMe = true;
                     $scope.showTotal = true;
+                    // Calculate total dynamically
                     // Assuming some calculation is done here to get the total
-                    $scope.total = 100; // Change this value to calculate a different total
+                    $scope.total = calculateTotal(); // Change this to your calculation function
                 };
+
+                function calculateTotal() {
+                    // Example calculation
+                    return 100; // Change this value to calculate a different total
+                }
             });
     </script>
 </body>

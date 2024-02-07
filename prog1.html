@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <div ng-controller="myController">
-        <h1>Hello, {{ name }}</h1>
+    <div ng-controller='myController'>
+        <h1>Hello, {{ message }} </h1>
     </div>
     <script>
         angular.module('myApp', [])
-            .controller('myController', function ($scope) {
-                $scope.name = 'John'; // Change 'John' to any name you want to display
-            });
+            .controller('myController', ($scope) => {
+                $scope.message = 'Hello World';
+            })
     </script>
 </body>
 
